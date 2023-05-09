@@ -48,7 +48,7 @@ methods:{
 
     if(this.title == '') this.fetchPhoto();
 
-    this.description = path?.overview;
+    this.description = (path?.overview.length < 200)?path?.overview:path?.overview.substr(0,200)+"....";
 
     this.photoURL+=path?.backdrop_path;
     console.log(this.pathURL)
@@ -76,7 +76,7 @@ mounted(){
   margin: 10px 0px;
 }
 .banner-description{
-  width: 40rem;
+  width: 30rem;
   font-size: 0.9rem;
 }
 .btn-grp{
